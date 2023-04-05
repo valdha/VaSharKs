@@ -1,0 +1,51 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <map>
+#include <algorithm>
+
+using namespace std;
+
+// Struct to hold user information
+struct User {
+    string username;
+    string password;
+    bool isAdmin;
+};
+
+// Enum for payment types
+enum PaymentType {
+    CASH,
+    CREDIT_CARD,
+    DEBIT_CARD
+};
+
+// Struct to hold menu item information
+struct MenuItem {
+    string name;
+    double price;
+};
+
+// Struct to hold order information
+struct Order {
+    User user;
+    vector<MenuItem> items;
+    PaymentType paymentType;
+};
+
+// Map to hold menu items
+map<int, MenuItem> menu;
+
+// Vector to hold users
+vector<User> users;
+
+// Function to register a new user
+void registerUser() {
+    string username, password;
+    cout << "Enter username: ";
+    cin >> username;
+    cout << "Enter password: ";
+    cin >> password;
+    users.push_back({ username, password, false });
+}
+
